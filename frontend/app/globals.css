@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/*
+  FormFlow design tokens — Tailwind v4 (@theme).
+  This installed stack is Tailwind v4, so tokens live here in CSS, not in a
+  tailwind.config.ts file. Utilities like `bg-indigo-600`, `text-ink-900`,
+  `font-serif` are generated from the custom properties below.
+*/
+@theme {
+  --color-indigo-50: #eae8f9;
+  --color-indigo-200: #c9c5f0;
+  --color-indigo-500: #6b63cc;
+  --color-indigo-600: #534ab7; /* PRIMARY */
+  --color-indigo-700: #3c3489;
+
+  --color-teal-50: #e1f5ee;
+  --color-teal-600: #0d7a5f;
+
+  --color-coral-50: #faece7;
+  --color-coral-600: #d04f25;
+
+  --color-amber-50: #fdf2e0;
+  --color-amber-600: #b06910;
+
+  --color-ink-50: #f5f3ee;
+  --color-ink-100: #e4e2da;
+  --color-ink-300: #aeada3;
+  --color-ink-500: #6b6b5e;
+  --color-ink-900: #1a1a18;
+
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+:root {
+  --background: var(--color-ink-50);
+  --foreground: var(--color-ink-900);
+}
+
+html {
+  /* Offset sticky headers during client-side scroll-to-top transitions */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Hide number input spinners for cleaner answer fields */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
